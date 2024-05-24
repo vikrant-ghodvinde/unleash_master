@@ -15,6 +15,8 @@ const Content = ({ show, setShow }) => {
     setUserName,
     postContent,
     setPostContent,
+    postCounts,
+    setPostCounts,
   } = getContext();
   return (
     <Sheet
@@ -78,16 +80,46 @@ const Content = ({ show, setShow }) => {
                 />
               </View>
               <View className="relative">
-                <CustomSwitch label="Post Counts" rightLabeled />
+                <CustomSwitch
+                  label="Post Counts"
+                  rightLabeled
+                  onCheckedChange={() =>
+                    setPostCounts({ ...postCounts, enabled: !postCounts.enabled })
+                  }
+                />
                 <View className="flex flex-row items-center space-x-2 mt-2">
                   <View style={{ width: (DEVICE_WIDTH - 58) / 3 }}>
-                    <CustomInput label="Likes" keyboardType="numeric" />
+                    <CustomInput
+                      label="Likes"
+                      keyboardType="numeric"
+                      placeholder="0"
+                      value={postCounts.likes}
+                      onChange={(value) =>
+                        setPostCounts({ ...postCounts, likes: value })
+                      }
+                    />
                   </View>
                   <View style={{ width: (DEVICE_WIDTH - 58) / 3 }}>
-                    <CustomInput label="Shares" keyboardType="numeric" />
+                    <CustomInput
+                      label="Shares"
+                      keyboardType="numeric"
+                      placeholder="0"
+                      value={postCounts.shares}
+                      onChange={(value) =>
+                        setPostCounts({ ...postCounts, shares: value })
+                      }
+                    />
                   </View>
                   <View style={{ width: (DEVICE_WIDTH - 58) / 3 }}>
-                    <CustomInput label="Replies" keyboardType="numeric" />
+                    <CustomInput
+                      label="Replies"
+                      keyboardType="numeric"
+                      placeholder="0"
+                      value={postCounts.replies}
+                      onChange={(value) =>
+                        setPostCounts({ ...postCounts, replies: value })
+                      }
+                    />
                   </View>
                 </View>
               </View>

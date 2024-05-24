@@ -5,15 +5,13 @@ import { DEVICE_WIDTH } from "../../../../styles/constants";
 
 const SocialMedia = () => {
   const { socialMedia, setSocialMedia } = getContext();
+
   const ToggleGroupItem = styled(ToggleGroup.Item, {
     width: (DEVICE_WIDTH - 30) / 4,
     variants: {
       active: {
         true: {
           backgroundColor: "#000",
-        },
-        false: {
-          backgroundColor: "silver",
         },
       },
     },

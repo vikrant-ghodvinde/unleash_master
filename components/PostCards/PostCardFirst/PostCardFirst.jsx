@@ -8,10 +8,17 @@ import {
 } from "../../../lib/constans/SocialMediIcons";
 import { CARD_HEIGHT, CARD_WIDTH } from "../../../styles/constants";
 import { getContext } from "../../../lib/context/context";
+import { HeartIcon, RepliesIcon, ShareIcon } from "../../../icons";
 
 const PostCardFirst = () => {
-  const { userImage, profileName, userName, socialMedia, postContent } =
-    getContext();
+  const {
+    userImage,
+    profileName,
+    userName,
+    socialMedia,
+    postContent,
+    postCounts,
+  } = getContext();
 
   const socialMediaIcon = (icon) => {
     return icon === "twitter"
@@ -54,9 +61,25 @@ const PostCardFirst = () => {
             ))}
           </View>
         </View>
-        <View>
+        <View className="relative">
           <Text>{postContent}</Text>
         </View>
+        {postCounts.enabled && (
+          <View className="relative flex flex-row items-center space-x-3 mt-3">
+            <View className="relative flex flex-row items-center space-x-0.5">
+              <HeartIcon color="#000" size={12} />
+              <Text className="text-xs">{postCounts.likes}</Text>
+            </View>
+            <View className="relative flex flex-row items-center space-x-0.5">
+              <ShareIcon color="#000" size={12} />
+              <Text className="text-xs">{postCounts.shares}</Text>
+            </View>
+            <View className="relative flex flex-row items-center space-x-0.5">
+              <RepliesIcon color="#000" size={12} />
+              <Text className="text-xs">{postCounts.replies}</Text>
+            </View>
+          </View>
+        )}
       </View>
     </View>
   );

@@ -10,19 +10,28 @@ export const ContextProvider = ({ children }) => {
   const [postContent, setPostContent] = useState(
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis laborum dolores praesentium? Reiciendis voluptatibus eaque soluta omnis saepe deleniti hic non deserunt provident. Voluptate nulla quisquam sunt magnam quas! Dolore!"
   );
+  const [postCounts, setPostCounts] = useState({
+    enabled: false,
+    likes: "0",
+    shares: "0",
+    replies: "0",
+  });
+  
   return (
     <AppContext.Provider
       value={{
-        socialMedia,
-        setSocialMedia,
+        userImage,
+        setUserImage,
         profileName,
         setProfileName,
         userName,
         setUserName,
+        socialMedia,
+        setSocialMedia,
         postContent,
         setPostContent,
-        userImage,
-        setUserImage,
+        postCounts,
+        setPostCounts,
       }}
     >
       {children}
