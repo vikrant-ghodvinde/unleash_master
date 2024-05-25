@@ -1,14 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Image } from "expo-image";
+import { CARD_HEIGHT, CARD_WIDTH } from "../../../styles/constants";
+import { getContext } from "../../../lib/context/context";
+import { HeartIcon, RepliesIcon, ShareIcon } from "../../../icons";
 import {
   Facebook,
   Instagram,
   LinkedIn,
   Twitter,
-} from "../../../lib/constans/SocialMediIcons";
-import { CARD_HEIGHT, CARD_WIDTH } from "../../../styles/constants";
-import { getContext } from "../../../lib/context/context";
-import { HeartIcon, RepliesIcon, ShareIcon } from "../../../icons";
+} from "../../../lib/constants/SocialMediaIcons";
+import { postBackgroundConfiguration } from "../../../lib/helpers/Configurations";
 
 const PostCardFirst = () => {
   const {
@@ -18,8 +19,11 @@ const PostCardFirst = () => {
     socialMedia,
     postContent,
     postCounts,
+    colorPallet,
+    postBackground,
   } = getContext();
 
+  // SOCIAL MEDIA ICONS
   const socialMediaIcon = (icon) => {
     return icon === "twitter"
       ? Twitter
@@ -32,8 +36,25 @@ const PostCardFirst = () => {
       : "";
   };
 
+  // POST COUNTS CONFIGURATION
+  const postCountConfiguration = (counts) => {
+    if (counts >= 1e6) {
+      return (counts / 1e6).toFixed(1) + "M";
+    } else if (counts >= 1e3) {
+      return (counts / 1e3).toFixed(1) + "k";
+    } else {
+      return counts.toString();
+    }
+  };
+
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, { backgroundColor: colorPallet.background }]}
+    >
+      <Image
+        source={postBackgroundConfiguration(postBackground)}
+        className="absolute top-0 left-0 w-full h-full opacity-5"
+      />
       <View style={styles.card}>
         <View className="flex flex-row items-start justify-between mb-5">
           <View className="flex flex-row items-center gap-x-1">
@@ -46,8 +67,22 @@ const PostCardFirst = () => {
               />
             </View>
             <View>
-              <Text className="font-bold">{profileName}</Text>
-              <Text className="text-xs">@{userName.toLowerCase()}</Text>
+              <Text
+                className="font-bold"
+                style={{
+                  color: colorPallet.color,
+                }}
+              >
+                {profileName}
+              </Text>
+              <Text
+                className="text-xs"
+                style={{
+                  color: colorPallet.color,
+                }}
+              >
+                @{userName.toLowerCase()}
+              </Text>
             </View>
           </View>
           <View className="flex flex-row items-center">
@@ -62,21 +97,48 @@ const PostCardFirst = () => {
           </View>
         </View>
         <View className="relative">
-          <Text>{postContent}</Text>
+          <Text
+            style={{
+              color: colorPallet.color,
+            }}
+          >
+            {postContent}
+          </Text>
         </View>
         {postCounts.enabled && (
-          <View className="relative flex flex-row items-center space-x-3 mt-3">
+          <View className="relative flex flex-row items-center space-x-3 mt-5">
             <View className="relative flex flex-row items-center space-x-0.5">
-              <HeartIcon color="#000" size={12} />
-              <Text className="text-xs">{postCounts.likes}</Text>
+              <HeartIcon color={colorPallet.color} size={12} />
+              <Text
+                className="text-xs"
+                style={{
+                  color: colorPallet.color,
+                }}
+              >
+                {postCountConfiguration(postCounts.likes)}
+              </Text>
             </View>
             <View className="relative flex flex-row items-center space-x-0.5">
-              <ShareIcon color="#000" size={12} />
-              <Text className="text-xs">{postCounts.shares}</Text>
+              <RepliesIcon color={colorPallet.color} size={12} />
+              <Text
+                className="text-xs"
+                style={{
+                  color: colorPallet.color,
+                }}
+              >
+                {postCountConfiguration(postCounts.replies)}
+              </Text>
             </View>
             <View className="relative flex flex-row items-center space-x-0.5">
-              <RepliesIcon color="#000" size={12} />
-              <Text className="text-xs">{postCounts.replies}</Text>
+              <ShareIcon color={colorPallet.color} size={12} />
+              <Text
+                className="text-xs"
+                style={{
+                  color: colorPallet.color,
+                }}
+              >
+                {postCountConfiguration(postCounts.shares)}
+              </Text>
             </View>
           </View>
         )}
@@ -94,7 +156,7 @@ const styles = StyleSheet.create({
   card: {
     width: CARD_WIDTH * 0.9,
     height: "auto",
-    minHeight: CARD_HEIGHT * 0.45,
+    // minHeight: CARD_HEIGHT * 0.45,
     maxHeight: CARD_HEIGHT * 0.9,
     borderRadius: CARD_WIDTH * 0.02,
     backgroundColor: "#fff",

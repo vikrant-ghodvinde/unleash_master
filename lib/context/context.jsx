@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from "react";
 export const AppContext = createContext();
 
 export const ContextProvider = ({ children }) => {
+  const [postBackground, setPostBackground] = useState("background1");
   const [userImage, setUserImage] = useState("");
   const [profileName, setProfileName] = useState("Vikrant Ghodvinde");
   const [userName, setUserName] = useState("vicky027_");
@@ -16,10 +17,17 @@ export const ContextProvider = ({ children }) => {
     shares: "0",
     replies: "0",
   });
-  
+  const [colorPallet, setColorPallet] = useState({
+    background: "#070A10",
+    color: "#7D7D8D",
+    highlighter: "#7E7EFF",
+  });
+
   return (
     <AppContext.Provider
       value={{
+        postBackground,
+        setPostBackground,
         userImage,
         setUserImage,
         profileName,
@@ -32,6 +40,8 @@ export const ContextProvider = ({ children }) => {
         setPostContent,
         postCounts,
         setPostCounts,
+        colorPallet,
+        setColorPallet,
       }}
     >
       {children}

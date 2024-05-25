@@ -101,23 +101,23 @@ const Content = ({ show, setShow }) => {
                   </View>
                   <View style={{ width: (DEVICE_WIDTH - 58) / 3 }}>
                     <CustomInput
-                      label="Shares"
-                      keyboardType="numeric"
-                      placeholder="0"
-                      value={postCounts.shares}
-                      onChange={(value) =>
-                        setPostCounts({ ...postCounts, shares: value })
-                      }
-                    />
-                  </View>
-                  <View style={{ width: (DEVICE_WIDTH - 58) / 3 }}>
-                    <CustomInput
                       label="Replies"
                       keyboardType="numeric"
                       placeholder="0"
                       value={postCounts.replies}
                       onChange={(value) =>
                         setPostCounts({ ...postCounts, replies: value })
+                      }
+                    />
+                  </View>
+                  <View style={{ width: (DEVICE_WIDTH - 58) / 3 }}>
+                    <CustomInput
+                      label="Shares"
+                      keyboardType="numeric"
+                      placeholder="0"
+                      value={postCounts.shares}
+                      onChange={(value) =>
+                        setPostCounts({ ...postCounts, shares: value })
                       }
                     />
                   </View>
