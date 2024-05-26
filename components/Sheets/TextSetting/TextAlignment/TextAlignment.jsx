@@ -18,7 +18,7 @@ const TextAlignment = () => {
   });
   return (
     <View>
-      <Text className="mb-1.5">Text Align</Text>
+      <Text className="mb-1 text-xs font-poppins-regular">Text Align</Text>
       <ToggleGroup
         type="single"
         value={textSettings.textAlign}
@@ -28,16 +28,16 @@ const TextAlignment = () => {
         style={{ backgroundColor: "#000" }}
       >
         <ToggleGroupItem value="left">
-          <Text className="text-xs">Left</Text>
+          <Text className="text-xxs font-poppins-regular">Left</Text>
         </ToggleGroupItem>
         <ToggleGroupItem value="center">
-          <Text className="text-xs">Center</Text>
+          <Text className="text-xxs font-poppins-regular">Center</Text>
         </ToggleGroupItem>
         <ToggleGroupItem value="right">
-          <Text className="text-xs">Right</Text>
+          <Text className="text-xxs font-poppins-regular">Right</Text>
         </ToggleGroupItem>
         <ToggleGroupItem value="justify">
-          <Text className="text-xs">Justify</Text>
+          <Text className="text-xxs font-poppins-regular">Justify</Text>
         </ToggleGroupItem>
       </ToggleGroup>
     </View>

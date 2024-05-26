@@ -52,7 +52,7 @@ const menuIcon = (route, focused) => {
         focused ? "bg-black" : "bg-transparent"
       }`}
     >
-      <Text>{icon}</Text>
+      {icon}
     </View>
   );
 };

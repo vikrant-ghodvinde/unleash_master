@@ -2,6 +2,7 @@ import { View, Text } from "react-native";
 import { ScrollView, Sheet } from "tamagui";
 import TextSize from "./TextSize/TextSize";
 import TextAlignment from "./TextAlignment/TextAlignment";
+import TextFont from "./TextFont/TextFont";
 
 const TextSetting = ({ show, setShow }) => {
   return (
@@ -23,7 +24,7 @@ const TextSetting = ({ show, setShow }) => {
       <Sheet.Handle scale={0.5} scaleY={0.8} />
       <Sheet.Frame>
         <View className="w-full py-5 px-5">
-          <Text className="text-lg text-dark font-urbanist-medium">
+          <Text className="text-dark font-poppins-medium">
             Text Settings
           </Text>
         </View>
@@ -35,6 +36,9 @@ const TextSetting = ({ show, setShow }) => {
                 </View>
                 <View className="relative">
                     <TextAlignment />
+                </View>
+                <View className="relative">
+                    <TextFont />
                 </View>
             </View>
           </View>

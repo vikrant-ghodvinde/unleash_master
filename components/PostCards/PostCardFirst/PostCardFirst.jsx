@@ -4,12 +4,6 @@ import { CARD_HEIGHT, CARD_WIDTH } from "../../../styles/constants";
 import { getContext } from "../../../lib/context/context";
 import { HeartIcon, RepliesIcon, ShareIcon } from "../../../icons";
 import {
-  Facebook,
-  Instagram,
-  LinkedIn,
-  Twitter,
-} from "../../../lib/constants/SocialMediaIcons";
-import {
   fontSizeConfiguration,
   postBackgroundConfiguration,
   postCountConfiguration,
@@ -28,6 +22,7 @@ const PostCardFirst = () => {
     colorPallet,
     postBackground,
     textSettings,
+    font,
   } = getContext();
 
   return (
@@ -51,7 +46,7 @@ const PostCardFirst = () => {
             </View>
             <View>
               <Text
-                className="font-bold"
+                className="font-poppins-semibold text-xs"
                 style={{
                   color: colorPallet.color,
                 }}
@@ -59,7 +54,7 @@ const PostCardFirst = () => {
                 {profileName}
               </Text>
               <Text
-                className="text-xs"
+                className="text-xxs font-poppins-regular"
                 style={{
                   color: colorPallet.color,
                 }}
@@ -85,6 +80,7 @@ const PostCardFirst = () => {
               color: colorPallet.color,
               fontSize: fontSizeConfiguration(textSettings.fontSize),
               textAlign: textAlignConfiguration(textSettings.textAlign),
+              fontFamily: font,
             }}
           >
             {postContent}
@@ -95,9 +91,10 @@ const PostCardFirst = () => {
             <View className="relative flex flex-row items-center space-x-0.5">
               <HeartIcon color={colorPallet.color} size={12} />
               <Text
-                className="text-xs"
                 style={{
                   color: colorPallet.color,
+                  fontSize: 12,
+                  fontFamily: font,
                 }}
               >
                 {postCountConfiguration(postCounts.likes)}
@@ -109,6 +106,8 @@ const PostCardFirst = () => {
                 className="text-xs"
                 style={{
                   color: colorPallet.color,
+                  fontSize: 12,
+                  fontFamily: font,
                 }}
               >
                 {postCountConfiguration(postCounts.replies)}
@@ -120,6 +119,8 @@ const PostCardFirst = () => {
                 className="text-xs"
                 style={{
                   color: colorPallet.color,
+                  fontSize: 12,
+                  fontFamily: font,
                 }}
               >
                 {postCountConfiguration(postCounts.shares)}

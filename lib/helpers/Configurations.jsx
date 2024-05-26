@@ -62,10 +62,10 @@ export const fontSizeConfiguration = (fontSize) => {
       return 14;
 
     case "large":
-      return 18;
+      return 16;
 
     case "extra-large":
-      return 20;
+      return 18;
 
     default:
       return;

@@ -4,7 +4,7 @@ import React from "react";
 const Settings = () => {
   return (
     <View className="w-full h-full items-center justify-center">
-      <Text>Settings</Text>
+      <Text className="font-poppins-regular">Settings</Text>
     </View>
   );
 };

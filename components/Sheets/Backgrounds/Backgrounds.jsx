@@ -26,7 +26,7 @@ const Backgrounds = ({ show, setShow }) => {
       <Sheet.Handle scale={0.5} scaleY={0.8} />
       <Sheet.Frame>
         <View className="w-full py-5 px-5">
-          <Text className="text-lg text-dark font-urbanist-medium">
+          <Text className="text-dark font-poppins-medium">
             Backgrounds
           </Text>
         </View>

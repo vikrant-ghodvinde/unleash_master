@@ -24,16 +24,16 @@ const SocialMedia = () => {
       style={{ backgroundColor: "#000" }}
     >
       <ToggleGroupItem value="twitter">
-        <Text>Twitter</Text>
+        <Text className="text-xxs font-poppins-regular">Twitter</Text>
       </ToggleGroupItem>
       <ToggleGroupItem value="linkedIn">
-        <Text>LinkedIn</Text>
+        <Text className="text-xxs font-poppins-regular">LinkedIn</Text>
       </ToggleGroupItem>
       <ToggleGroupItem value="instagram">
-        <Text>Instagram</Text>
+        <Text className="text-xxs font-poppins-regular">Instagram</Text>
       </ToggleGroupItem>
       <ToggleGroupItem value="facebook">
-        <Text>Facebook</Text>
+        <Text className="text-xxs font-poppins-regular">Facebook</Text>
       </ToggleGroupItem>
     </ToggleGroup>
   );

@@ -1,4 +1,4 @@
-import { View, Text, Pressable, ToastAndroid } from "react-native";
+import { View, Text, Pressable, ToastAndroid, Share } from "react-native";
 import AppLayout from "../../components/AppLayout/AppLayout";
 import { DEVICE_WIDTH } from "../../styles/constants";
 import AppHeader from "../../components/AppHeader/AppHeader";
@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 import Content from "../../components/Sheets/Content/Content";
 import ColorPalette from "../../components/Sheets/ColorPalette/ColorPalette";
 import * as MediaLibrary from "expo-media-library";
-import ViewShot, { captureRef, captureScreen } from "react-native-view-shot";
+import ViewShot, { captureRef } from "react-native-view-shot";
 import Backgrounds from "../../components/Sheets/Backgrounds/Backgrounds";
 import TextSetting from "../../components/Sheets/TextSetting/TextSetting";
 
@@ -30,7 +30,7 @@ const Home = () => {
       });
 
       if (localUri) {
-        console.log(localUri)
+        console.log(localUri);
         await MediaLibrary.saveToLibraryAsync(localUri);
         ToastAndroid.show("Post saved successfully.", ToastAndroid.SHORT);
       }
@@ -52,32 +52,32 @@ const Home = () => {
               className="py-2 px-6"
               onPress={() => setContestSheet(true)}
             >
-              <Text className="text-center">Content</Text>
+              <Text className="text-center font-poppins-regular">Content</Text>
             </Pressable>
 
             <Pressable
               className="py-2 px-6"
               onPress={() => setSettingSheet(true)}
             >
-              <Text className="text-center">Color Palette</Text>
+              <Text className="text-center font-poppins-regular">Color Palette</Text>
             </Pressable>
 
             <Pressable
               className="py-2 px-6"
               onPress={() => setTextSettingSheet(true)}
             >
-              <Text className="text-center">Text Setting</Text>
+              <Text className="text-center font-poppins-regular">Text Setting</Text>
             </Pressable>
 
             <Pressable
               className="py-2 px-6"
               onPress={() => setBackgroundsSheet(true)}
             >
-              <Text className="text-center">Backgrounds</Text>
+              <Text className="text-center font-poppins-regular">Backgrounds</Text>
             </Pressable>
 
             <Pressable className="py-2 px-6" onPress={exportPostImage}>
-              <Text className="text-center">Save Post</Text>
+              <Text className="text-center font-poppins-regular">Save Post</Text>
             </Pressable>
           </View>
         </View>

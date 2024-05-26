@@ -4,7 +4,7 @@ import React from "react";
 const User = () => {
   return (
     <View className="w-full h-full items-center justify-center">
-      <Text>User</Text>
+      <Text className="font-poppins-regular">User</Text>
     </View>
   );
 };

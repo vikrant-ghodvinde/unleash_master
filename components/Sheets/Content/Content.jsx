@@ -37,7 +37,7 @@ const Content = ({ show, setShow }) => {
       <Sheet.Handle scale={0.5} scaleY={0.8} />
       <Sheet.Frame>
         <View className="w-full p-5">
-          <Text className="text-lg">Content</Text>
+          <Text className="text-dark font-poppins-medium">Content</Text>
         </View>
         <ScrollView>
           <View className="relative px-5 pt-2 pb-8">

@@ -18,7 +18,7 @@ const TextSize = () => {
   });
   return (
     <View>
-      <Text className="mb-1.5">Font Size</Text>
+      <Text className="mb-1 text-xs font-poppins-regular">Font Size</Text>
       <ToggleGroup
         type="single"
         value={textSettings.fontSize}
@@ -28,16 +28,16 @@ const TextSize = () => {
         style={{ backgroundColor: "#000" }}
       >
         <ToggleGroupItem value="small">
-          <Text className="text-xs">Small</Text>
+          <Text className="text-xxs font-poppins-regular">Small</Text>
         </ToggleGroupItem>
         <ToggleGroupItem value="medium">
-          <Text className="text-xs">Medium</Text>
+          <Text className="text-xxs font-poppins-regular">Medium</Text>
         </ToggleGroupItem>
         <ToggleGroupItem value="large">
-          <Text className="text-xs">Large</Text>
+          <Text className="text-xxs font-poppins-regular">Large</Text>
         </ToggleGroupItem>
         <ToggleGroupItem value="extra-large">
-          <Text className="text-xs">Extra Large</Text>
+          <Text className="text-xxs font-poppins-regular">Extra Large</Text>
         </ToggleGroupItem>
       </ToggleGroup>
     </View>

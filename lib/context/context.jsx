@@ -4,6 +4,7 @@ export const AppContext = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [postBackground, setPostBackground] = useState("background1");
+  const [font, setFont] = useState("playfair-display");
   const [userImage, setUserImage] = useState("");
   const [profileName, setProfileName] = useState("Vikrant Ghodvinde");
   const [userName, setUserName] = useState("vicky027_");
@@ -23,7 +24,7 @@ export const ContextProvider = ({ children }) => {
     highlighter: "#7E7EFF",
   });
   const [textSettings, setTextSettings] = useState({
-    fontSize: "medium",
+    fontSize: "small",
     textAlign: "left",
     fontFamily: "",
   });
@@ -33,6 +34,8 @@ export const ContextProvider = ({ children }) => {
       value={{
         postBackground,
         setPostBackground,
+        font,
+        setFont,
         userImage,
         setUserImage,
         profileName,

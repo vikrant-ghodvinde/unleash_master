@@ -11,7 +11,7 @@ const CustomInput = ({
 }) => {
   return (
     <View className="relative w-full">
-      <Text className="mb-1.5">{label}</Text>
+      <Text className="mb-1 text-xs font-poppins-regular">{label}</Text>
       {!multiline ? (
         <TextInput
           keyboardType={keyboardType}
@@ -19,7 +19,7 @@ const CustomInput = ({
           value={value}
           onChangeText={onChange}
           placeholder={placeholder}
-          className="w-full h-11 px-2 border border-dark outline-none rounded-md"
+          className="w-full h-11 px-2 border border-dark outline-none rounded-md text-xs font-poppins-regular"
         />
       ) : (
         <TextInput
@@ -30,7 +30,7 @@ const CustomInput = ({
           value={value}
           onChangeText={onChange}
           placeholder={placeholder}
-          className="w-full h-20 p-2 border border-dark outline-none rounded-md"
+          className="w-full h-24 p-2 border border-dark outline-none rounded-md text-xs font-poppins-regular"
         />
       )}
     </View>

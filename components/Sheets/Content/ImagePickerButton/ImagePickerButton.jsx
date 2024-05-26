@@ -23,7 +23,7 @@ const ImagePickerButton = () => {
         className="w-full py-4 px-6 rounded-md bg-black flex items-center justify-center"
       >
         <UploadIcon color="#fff" size={18} />
-        <Text className="text-white text-center mt-1">Upload Image</Text>
+        <Text className="text-white text-center mt-1 text-xs font-poppins-regular">Upload Image</Text>
       </TouchableOpacity>
     </View>
   );

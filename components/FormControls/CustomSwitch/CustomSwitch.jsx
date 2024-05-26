@@ -59,7 +59,7 @@ export function CustomSwitch({
   return (
     <XStack alignItems="center" gap="$2">
       {!rightLabeled && (
-        <Text fontWeight={600} htmlFor={id}>
+        <Text htmlFor={id} className="text-xs font-poppins-regular">
           {label}
         </Text>
       )}
@@ -71,7 +71,7 @@ export function CustomSwitch({
         <Switch.Thumb animation="quick" />
       </Switch>
       {rightLabeled && (
-        <Text fontWeight={600} htmlFor={id}>
+        <Text htmlFor={id} className="text-xs font-poppins-regular">
           {label}
         </Text>
       )}
