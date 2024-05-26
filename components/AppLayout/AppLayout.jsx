@@ -1,16 +1,17 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { ScrollView } from "tamagui";
 
 const AppLayout = ({ children, scrolled }) => {
   if (scrolled) {
     return (
-      <View className="bg-white">
-        <SafeAreaView>
-          <ScrollView>
-            <View className="px-3">{children}</View>
-          </ScrollView>
-        </SafeAreaView>
-      </View>
+      <ScrollView>
+        <View className="bg-white">
+          <SafeAreaView>
+            <View className="pb-8 px-3">{children}</View>
+          </SafeAreaView>
+        </View>
+      </ScrollView>
     );
   } else {
     return (

@@ -22,6 +22,11 @@ export const ContextProvider = ({ children }) => {
     color: "#7D7D8D",
     highlighter: "#7E7EFF",
   });
+  const [textSettings, setTextSettings] = useState({
+    fontSize: "medium",
+    textAlign: "left",
+    fontFamily: "",
+  });
 
   return (
     <AppContext.Provider
@@ -40,6 +45,8 @@ export const ContextProvider = ({ children }) => {
         setPostContent,
         postCounts,
         setPostCounts,
+        textSettings,
+        setTextSettings,
         colorPallet,
         setColorPallet,
       }}

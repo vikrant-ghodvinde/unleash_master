@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { TamaguiProvider } from "tamagui";
 import tamaguiConfig from "../tamagui.config";
 import { ContextProvider } from "../lib/context/context";
+import { ToastProvider } from "@tamagui/toast";
 
 export default function AppLayout() {
   const [loaded] = useFonts({
@@ -23,12 +24,14 @@ export default function AppLayout() {
   return (
     <ContextProvider>
       <TamaguiProvider config={tamaguiConfig}>
-        <Stack
-          initialRouteName="(tabs)"
-          screenOptions={{ headerShown: false, animation: "fade" }}
-        >
-          <Stack.Screen name="(tabs)" />
-        </Stack>
+        <ToastProvider>
+          <Stack
+            initialRouteName="(tabs)"
+            screenOptions={{ headerShown: false, animation: "fade" }}
+          >
+            <Stack.Screen name="(tabs)" />
+          </Stack>
+        </ToastProvider>
       </TamaguiProvider>
     </ContextProvider>
   );

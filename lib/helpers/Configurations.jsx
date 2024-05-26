@@ -1,3 +1,4 @@
+import { Facebook, Instagram, LinkedIn, Twitter } from "../constants/SocialMediaIcons";
 import {
   Background1,
   Background2,
@@ -49,5 +50,72 @@ export const postBackgroundConfiguration = (background) => {
 
     default:
       return Background1;
+  }
+};
+
+export const fontSizeConfiguration = (fontSize) => {
+  switch (fontSize) {
+    case "small":
+      return 12;
+
+    case "medium":
+      return 14;
+
+    case "large":
+      return 18;
+
+    case "extra-large":
+      return 20;
+
+    default:
+      return;
+  }
+};
+
+export const textAlignConfiguration = (fontSize) => {
+  switch (fontSize) {
+    case "left":
+      return "left";
+
+    case "center":
+      return "center";
+
+    case "right":
+      return "right";
+
+    case "justify":
+      return "justify";
+
+    default:
+      return;
+  }
+};
+
+export const socialMediaIcon = (icon) => {
+  switch (icon) {
+    case "twitter":
+      return Twitter;
+
+    case "linkedIn":
+      return LinkedIn;
+
+    case "instagram":
+      return Instagram;
+
+    case "facebook":
+      return Facebook;
+
+    default:
+      return Twitter;
+  }
+};
+
+export const postCountConfiguration = (counts) => {
+  if (counts >= 1e6) {
+    return (counts / 1e6).toFixed(1) + "M";
+  } else if (counts >= 1e3) {
+    return (counts / 1e3).toFixed(1) + "k";
+  } else {
+    return counts.toString();
   }
 };

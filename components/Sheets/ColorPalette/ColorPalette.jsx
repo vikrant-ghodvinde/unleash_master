@@ -1,4 +1,4 @@
-import { View, Text, Pressable, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { ScrollView, Sheet } from "tamagui";
 import colorPalate from "../../../lib/json/colorPalate.json";
 import { DEVICE_WIDTH } from "../../../styles/constants";

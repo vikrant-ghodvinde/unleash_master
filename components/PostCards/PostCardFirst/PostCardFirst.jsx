@@ -9,7 +9,13 @@ import {
   LinkedIn,
   Twitter,
 } from "../../../lib/constants/SocialMediaIcons";
-import { postBackgroundConfiguration } from "../../../lib/helpers/Configurations";
+import {
+  fontSizeConfiguration,
+  postBackgroundConfiguration,
+  postCountConfiguration,
+  socialMediaIcon,
+  textAlignConfiguration,
+} from "../../../lib/helpers/Configurations";
 
 const PostCardFirst = () => {
   const {
@@ -21,31 +27,8 @@ const PostCardFirst = () => {
     postCounts,
     colorPallet,
     postBackground,
+    textSettings,
   } = getContext();
-
-  // SOCIAL MEDIA ICONS
-  const socialMediaIcon = (icon) => {
-    return icon === "twitter"
-      ? Twitter
-      : icon === "linkedIn"
-      ? LinkedIn
-      : icon === "instagram"
-      ? Instagram
-      : icon === "facebook"
-      ? Facebook
-      : "";
-  };
-
-  // POST COUNTS CONFIGURATION
-  const postCountConfiguration = (counts) => {
-    if (counts >= 1e6) {
-      return (counts / 1e6).toFixed(1) + "M";
-    } else if (counts >= 1e3) {
-      return (counts / 1e3).toFixed(1) + "k";
-    } else {
-      return counts.toString();
-    }
-  };
 
   return (
     <View
@@ -100,6 +83,8 @@ const PostCardFirst = () => {
           <Text
             style={{
               color: colorPallet.color,
+              fontSize: fontSizeConfiguration(textSettings.fontSize),
+              textAlign: textAlignConfiguration(textSettings.textAlign),
             }}
           >
             {postContent}
