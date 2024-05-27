@@ -10,6 +10,15 @@ import * as MediaLibrary from "expo-media-library";
 import ViewShot, { captureRef } from "react-native-view-shot";
 import Backgrounds from "../../components/Sheets/Backgrounds/Backgrounds";
 import TextSetting from "../../components/Sheets/TextSetting/TextSetting";
+import CircleButton from "../../components/Buttons/CircleButton/CircleButton";
+import {
+  BackgroundIcon,
+  ColorPickerIcon,
+  ContentIcon,
+  DownloadIcon,
+  TextIcon,
+} from "../../icons";
+import RoundedButton from "../../components/Buttons/RoundedButton/RoundedButton";
 
 const Home = () => {
   console.log(DEVICE_WIDTH);
@@ -47,38 +56,41 @@ const Home = () => {
           <ViewShot className="relative" ref={postRef}>
             <PostCardFirst />
           </ViewShot>
-          <View className="mt-8 space-y-2">
-            <Pressable
-              className="py-2 px-6"
-              onPress={() => setContestSheet(true)}
+          <View className="relative w-full mt-8 space-y-8">
+            <View
+              className="flex flex-row items-center justify-evenly"
+              style={{ width: DEVICE_WIDTH }}
             >
-              <Text className="text-center font-poppins-regular">Content</Text>
-            </Pressable>
-
-            <Pressable
-              className="py-2 px-6"
-              onPress={() => setSettingSheet(true)}
-            >
-              <Text className="text-center font-poppins-regular">Color Palette</Text>
-            </Pressable>
-
-            <Pressable
-              className="py-2 px-6"
-              onPress={() => setTextSettingSheet(true)}
-            >
-              <Text className="text-center font-poppins-regular">Text Setting</Text>
-            </Pressable>
-
-            <Pressable
-              className="py-2 px-6"
-              onPress={() => setBackgroundsSheet(true)}
-            >
-              <Text className="text-center font-poppins-regular">Backgrounds</Text>
-            </Pressable>
-
-            <Pressable className="py-2 px-6" onPress={exportPostImage}>
-              <Text className="text-center font-poppins-regular">Save Post</Text>
-            </Pressable>
+              <CircleButton
+                label={<ContentIcon size={22} />}
+                onPress={() => setContestSheet(true)}
+              />
+              <CircleButton
+                label={<ColorPickerIcon size={22} />}
+                onPress={() => setSettingSheet(true)}
+              />
+              <CircleButton
+                label={<TextIcon size={20} />}
+                onPress={() => setTextSettingSheet(true)}
+              />
+              <CircleButton
+                label={<BackgroundIcon size={26} />}
+                onPress={() => setBackgroundsSheet(true)}
+              />
+            </View>
+            <View className="relative">
+              <RoundedButton
+                label={
+                  <View className="items-center justify-center">
+                    <DownloadIcon size={16} />
+                    <Text className="text-xs font-poppins-regular">
+                      Save Post
+                    </Text>
+                  </View>
+                }
+                onPress={exportPostImage}
+              />
+            </View>
           </View>
         </View>
       </AppLayout>

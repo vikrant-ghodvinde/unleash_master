@@ -10,6 +10,7 @@ const Frame = styled(Stack, {
   borderRadius: 20,
   borderWidth: 1,
   backgroundColor: "silver",
+  animation: "bouncy",
   variants: {
     checked: {
       true: {
@@ -68,7 +69,7 @@ export function CustomSwitch({
         onCheckedChange={onCheckedChange}
         defaultChecked={defaultChecked}
       >
-        <Switch.Thumb animation="quick" />
+        <Switch.Thumb animation="bouncy" />
       </Switch>
       {rightLabeled && (
         <Text htmlFor={id} className="text-xs font-poppins-regular">
