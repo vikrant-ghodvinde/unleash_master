@@ -4,8 +4,11 @@ import { useEffect } from "react";
 import { TamaguiProvider } from "tamagui";
 import tamaguiConfig from "../tamagui.config";
 import { ContextProvider } from "../lib/context/context";
+import { i18n } from "../lib/locales/translator";
+import { getLocales } from "expo-localization";
 
 export default function AppLayout() {
+  i18n.locale = getLocales()[0].languageCode;
   const [loaded] = useFonts({
     abel: require("../assets/fonts/Abel/Abel-Regular.ttf"),
     arvo: require("../assets/fonts/Arvo/Arvo-Regular.ttf"),

@@ -1,4 +1,4 @@
-import { View, Text, Pressable, ToastAndroid, Share } from "react-native";
+import { View, Text, ToastAndroid } from "react-native";
 import AppLayout from "../../components/AppLayout/AppLayout";
 import { DEVICE_WIDTH } from "../../styles/constants";
 import AppHeader from "../../components/AppHeader/AppHeader";
@@ -11,6 +11,7 @@ import ViewShot, { captureRef } from "react-native-view-shot";
 import Backgrounds from "../../components/Sheets/Backgrounds/Backgrounds";
 import TextSetting from "../../components/Sheets/TextSetting/TextSetting";
 import CircleButton from "../../components/Buttons/CircleButton/CircleButton";
+import RoundedButton from "../../components/Buttons/RoundedButton/RoundedButton";
 import {
   BackgroundIcon,
   ColorPickerIcon,
@@ -18,7 +19,6 @@ import {
   DownloadIcon,
   TextIcon,
 } from "../../icons";
-import RoundedButton from "../../components/Buttons/RoundedButton/RoundedButton";
 
 const Home = () => {
   console.log(DEVICE_WIDTH);
@@ -50,8 +50,8 @@ const Home = () => {
 
   return (
     <View className="w-full h-full bg-white">
-      <AppHeader label="Create Post" />
       <AppLayout scrolled>
+        <AppHeader label="Create Post" />
         <View className="w-full h-full items-center justify-start">
           <ViewShot className="relative" ref={postRef}>
             <PostCardFirst />

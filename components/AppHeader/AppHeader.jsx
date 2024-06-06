@@ -6,21 +6,21 @@ const AppHeader = ({ label, backButton }) => {
   const router = useRouter();
   if (backButton) {
     return (
-      <View className="relative pt-10 pb-2 w-full flex flex-row items-center justify-between">
+      <View className="relative mb-8 w-full flex flex-row items-center justify-between">
         <TouchableOpacity
           onPress={() => router.back()}
           className="w-8 h-8 items-center justify-center bg-black rounded-full"
         >
           <ArrowLeft color="#fff" />
         </TouchableOpacity>
-        <Text className="text-center text-xl font-poppins-bold">{label}</Text>
+        <Text className="text-center text-xl font-poppins-semibold">{label}</Text>
         <View></View>
       </View>
     );
   } else {
     return (
-      <View className="relative pt-10 pb-2 w-full flex flex-row items-center justify-center">
-        <Text className="text-center text-xl font-poppins-bold">{label}</Text>
+      <View className="relative mb-8 w-full flex flex-row items-center justify-center">
+        <Text className="text-center text-xl font-poppins-semibold">{label}</Text>
       </View>
     );
   }

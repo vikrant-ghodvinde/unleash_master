@@ -1,4 +1,4 @@
-import { AntDesign, Entypo, Feather, Foundation, Ionicons } from "@expo/vector-icons";
+import { AntDesign, Feather, Foundation, Ionicons } from "@expo/vector-icons";
 
 export const HomeIcon = (props) => {
   return <AntDesign name="home" {...props} />;
@@ -54,4 +54,12 @@ export const ColorPickerIcon = (props) => {
 
 export const BackgroundIcon = (props) => {
   return <Foundation name="background-color" {...props} />;
+};
+
+export const GlobeIcon = (props) => {
+  return <Ionicons name="globe-outline" {...props} />;
+};
+
+export const HelpIcon = (props) => {
+  return <Feather name="help-circle" {...props} />;
 };
