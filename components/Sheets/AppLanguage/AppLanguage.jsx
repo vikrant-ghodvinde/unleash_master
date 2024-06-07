@@ -2,9 +2,11 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { ScrollView, Sheet } from "tamagui";
 import { Image } from "expo-image";
 import languageCode from "../../../lib/json/languageCode.json";
+import { languageIconsConfiguration } from "../../../lib/helpers/Configurations";
 
 const AppLanguage = ({ show, setShow }) => {
   const handleChange = (code) => {
+    console.log(code)
     setShow(false);
   };
   return (
@@ -38,7 +40,7 @@ const AppLanguage = ({ show, setShow }) => {
                   onPress={() => handleChange(item.languageCode)}
                 >
                   <Image
-                    // source={languageIconsConfiguration(item.icon)}
+                    source={languageIconsConfiguration(item.icon)}
                     alt={item.languageCode}
                     className="w-5 h-5"
                   />

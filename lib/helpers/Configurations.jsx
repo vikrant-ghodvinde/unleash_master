@@ -1,4 +1,9 @@
-import { Facebook, Instagram, LinkedIn, Twitter } from "../constants/SocialMediaIcons";
+import {
+  Facebook,
+  Instagram,
+  LinkedIn,
+  Twitter,
+} from "../constants/SocialMediaIcons";
 import {
   Background1,
   Background2,
@@ -12,6 +17,19 @@ import {
   Background10,
   Background11,
 } from "../constants/postBackgrounds";
+
+import {
+  English,
+  French,
+  Spanish,
+  German,
+  Italian,
+  Chinese,
+  Japanese,
+  Korean,
+  Indonesian,
+  Turkish,
+} from "../constants/LanguageFlagIcons";
 
 export const postBackgroundConfiguration = (background) => {
   switch (background) {
@@ -117,5 +135,42 @@ export const postCountConfiguration = (counts) => {
     return (counts / 1e3).toFixed(1) + "k";
   } else {
     return counts.toString();
+  }
+};
+
+export const languageIconsConfiguration = (icon) => {
+  switch (icon) {
+    case "en":
+      return English;
+
+    case "fr":
+      return French;
+
+    case "es":
+      return Spanish;
+
+    case "de":
+      return German;
+
+    case "it":
+      return Italian;
+
+    case "zh":
+      return Chinese;
+
+    case "ja":
+      return Japanese;
+
+    case "ko":
+      return Korean;
+
+    case "id":
+      return Indonesian;
+
+    case "tr":
+      return Turkish;
+
+    default:
+      return English;
   }
 };

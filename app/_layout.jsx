@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { TamaguiProvider } from "tamagui";
 import tamaguiConfig from "../tamagui.config";
 import { ContextProvider } from "../lib/context/context";
+import { StatusBar } from "expo-status-bar";
 
 export default function AppLayout() {
   const [loaded] = useFonts({
@@ -52,6 +53,7 @@ export default function AppLayout() {
         >
           <Stack.Screen name="(tabs)" />
         </Stack>
+        <StatusBar style="dark" animated />
       </TamaguiProvider>
     </ContextProvider>
   );
