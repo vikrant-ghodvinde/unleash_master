@@ -5,6 +5,7 @@ import { getContext } from "../../../lib/context/context";
 import postBackgrounds from "../../../lib/json/postBackgrounds.json";
 import { Image } from "expo-image";
 import { postBackgroundConfiguration } from "../../../lib/helpers/Configurations";
+import i18n from "../../../lib/translate/i18n";
 
 const Backgrounds = ({ show, setShow }) => {
   const { colorPallet, setPostBackground } = getContext();
@@ -27,7 +28,7 @@ const Backgrounds = ({ show, setShow }) => {
       <Sheet.Frame>
         <View className="w-full py-5 px-5">
           <Text className="text-dark font-poppins-medium">
-            Backgrounds
+            {i18n.t("backgrounds")}
           </Text>
         </View>
 

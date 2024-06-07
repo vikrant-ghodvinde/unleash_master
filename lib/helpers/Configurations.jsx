@@ -174,3 +174,40 @@ export const languageIconsConfiguration = (icon) => {
       return English;
   }
 };
+
+export const languageNameConfiguration = (languageCode) => {
+  switch (languageCode) {
+    case "en":
+      return "English";
+
+    case "fr":
+      return "French";
+
+    case "es":
+      return "Spanish";
+
+    case "de":
+      return "German";
+
+    case "it":
+      return "Italian";
+
+    case "zh":
+      return "Chinese";
+
+    case "ja":
+      return "Japanese";
+
+    case "ko":
+      return "Korean";
+
+    case "id":
+      return "Indonesian";
+
+    case "tr":
+      return "Turkish";
+
+    default:
+      return "English";
+  }
+};

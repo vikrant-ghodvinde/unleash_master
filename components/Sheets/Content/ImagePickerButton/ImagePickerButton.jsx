@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { UploadIcon } from "../../../../icons";
 import { getContext } from "../../../../lib/context/context";
+import i18n from "../../../../lib/translate/i18n";
 
 const ImagePickerButton = () => {
   const { setUserImage } = getContext();
@@ -23,7 +24,9 @@ const ImagePickerButton = () => {
         className="w-full py-4 px-6 rounded-md bg-black flex items-center justify-center"
       >
         <UploadIcon color="#fff" size={18} />
-        <Text className="text-white text-center mt-1 text-xs font-poppins-regular">Upload Image</Text>
+        <Text className="text-white text-center mt-1 text-xs font-poppins-regular">
+          {i18n.t("upload-image")}
+        </Text>
       </TouchableOpacity>
     </View>
   );

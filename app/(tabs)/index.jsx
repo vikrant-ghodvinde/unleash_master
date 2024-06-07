@@ -19,8 +19,10 @@ import {
   DownloadIcon,
   TextIcon,
 } from "../../icons";
+import i18n from "../../lib/translate/i18n";
+import withTranslation from "../../lib/translate/withTranslation";
 
-const Home = () => {
+const Home = ({ t }) => {
   console.log(DEVICE_WIDTH);
   const postRef = useRef();
   const [contestSheet, setContestSheet] = useState(false);
@@ -51,7 +53,7 @@ const Home = () => {
   return (
     <View className="w-full h-full bg-white">
       <AppLayout scrolled>
-        <AppHeader label="Create Post" />
+        <AppHeader label={i18n.t("home-title")} />
         <View className="w-full h-full items-center justify-start">
           <ViewShot className="relative" ref={postRef}>
             <PostCardFirst />
@@ -84,7 +86,7 @@ const Home = () => {
                   <View className="items-center justify-center">
                     <DownloadIcon size={16} />
                     <Text className="text-xs font-poppins-regular">
-                      Save Post
+                      {i18n.t("save-post")}
                     </Text>
                   </View>
                 }
@@ -102,4 +104,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withTranslation(Home);

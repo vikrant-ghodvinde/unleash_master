@@ -2,6 +2,7 @@ import { Text, View } from "react-native";
 import { ToggleGroup, styled } from "tamagui";
 import { DEVICE_WIDTH } from "../../../../styles/constants";
 import { getContext } from "../../../../lib/context/context";
+import i18n from "../../../../lib/translate/i18n";
 
 const TextAlignment = () => {
   const { textSettings, setTextSettings } = getContext();
@@ -18,7 +19,9 @@ const TextAlignment = () => {
   });
   return (
     <View>
-      <Text className="mb-1 text-xs font-poppins-regular">Text Align</Text>
+      <Text className="mb-1 text-xs font-poppins-regular">
+        {i18n.t("text-align")}
+      </Text>
       <ToggleGroup
         type="single"
         value={textSettings.textAlign}
@@ -28,16 +31,24 @@ const TextAlignment = () => {
         style={{ backgroundColor: "#000" }}
       >
         <ToggleGroupItem value="left">
-          <Text className="text-xxs font-poppins-regular">Left</Text>
+          <Text className="text-xxs font-poppins-regular">
+            {i18n.t("left")}
+          </Text>
         </ToggleGroupItem>
         <ToggleGroupItem value="center">
-          <Text className="text-xxs font-poppins-regular">Center</Text>
+          <Text className="text-xxs font-poppins-regular">
+            {i18n.t("center")}
+          </Text>
         </ToggleGroupItem>
         <ToggleGroupItem value="right">
-          <Text className="text-xxs font-poppins-regular">Right</Text>
+          <Text className="text-xxs font-poppins-regular">
+            {i18n.t("right")}
+          </Text>
         </ToggleGroupItem>
         <ToggleGroupItem value="justify">
-          <Text className="text-xxs font-poppins-regular">Justify</Text>
+          <Text className="text-xxs font-poppins-regular">
+            {i18n.t("justify")}
+          </Text>
         </ToggleGroupItem>
       </ToggleGroup>
     </View>

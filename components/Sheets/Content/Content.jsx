@@ -6,6 +6,7 @@ import { getContext } from "../../../lib/context/context";
 import ImagePickerButton from "./ImagePickerButton/ImagePickerButton";
 import { CustomSwitch } from "../../FormControls/CustomSwitch/CustomSwitch";
 import { DEVICE_WIDTH } from "../../../styles/constants";
+import i18n from "../../../lib/translate/i18n";
 
 const Content = ({ show, setShow }) => {
   const {
@@ -37,7 +38,9 @@ const Content = ({ show, setShow }) => {
       <Sheet.Handle scale={0.5} scaleY={0.8} />
       <Sheet.Frame>
         <View className="w-full p-5">
-          <Text className="text-dark font-poppins-medium">Content</Text>
+          <Text className="text-dark font-poppins-medium">
+            {i18n.t("content")}
+          </Text>
         </View>
         <ScrollView>
           <View className="relative px-5 pt-2 pb-8">
@@ -50,7 +53,7 @@ const Content = ({ show, setShow }) => {
               </View>
               <View className="relative">
                 <CustomInput
-                  label="Name"
+                  label={i18n.t("name")}
                   keyboardType="default"
                   placeholder="Vikrant Ghodvinde"
                   color="#000"
@@ -60,7 +63,7 @@ const Content = ({ show, setShow }) => {
               </View>
               <View className="relative">
                 <CustomInput
-                  label="User Name"
+                  label={i18n.t("user-name")}
                   keyboardType="default"
                   placeholder="vicky027_"
                   color="#000"
@@ -70,7 +73,7 @@ const Content = ({ show, setShow }) => {
               </View>
               <View className="relative">
                 <CustomInput
-                  label="Post Content"
+                  label={i18n.t("post-content")}
                   multiline
                   keyboardType="default"
                   placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, corporis."
@@ -81,16 +84,19 @@ const Content = ({ show, setShow }) => {
               </View>
               <View className="relative">
                 <CustomSwitch
-                  label="Post Counts"
+                  label={i18n.t("post-counts")}
                   rightLabeled
                   onCheckedChange={() =>
-                    setPostCounts({ ...postCounts, enabled: !postCounts.enabled })
+                    setPostCounts({
+                      ...postCounts,
+                      enabled: !postCounts.enabled,
+                    })
                   }
                 />
                 <View className="flex flex-row items-center space-x-2 mt-2">
                   <View style={{ width: (DEVICE_WIDTH - 58) / 3 }}>
                     <CustomInput
-                      label="Likes"
+                      label={i18n.t("likes")}
                       keyboardType="numeric"
                       placeholder="0"
                       value={postCounts.likes}
@@ -101,7 +107,7 @@ const Content = ({ show, setShow }) => {
                   </View>
                   <View style={{ width: (DEVICE_WIDTH - 58) / 3 }}>
                     <CustomInput
-                      label="Replies"
+                      label={i18n.t("replies")}
                       keyboardType="numeric"
                       placeholder="0"
                       value={postCounts.replies}
@@ -112,7 +118,7 @@ const Content = ({ show, setShow }) => {
                   </View>
                   <View style={{ width: (DEVICE_WIDTH - 58) / 3 }}>
                     <CustomInput
-                      label="Shares"
+                      label={i18n.t("shares")}
                       keyboardType="numeric"
                       placeholder="0"
                       value={postCounts.shares}

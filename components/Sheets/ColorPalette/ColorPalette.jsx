@@ -3,6 +3,7 @@ import { ScrollView, Sheet } from "tamagui";
 import colorPalate from "../../../lib/json/colorPalate.json";
 import { DEVICE_WIDTH } from "../../../styles/constants";
 import { getContext } from "../../../lib/context/context";
+import i18n from "../../../lib/translate/i18n";
 
 const ColorPalette = ({ show, setShow }) => {
   const { colorPallet, setColorPallet } = getContext();
@@ -25,7 +26,7 @@ const ColorPalette = ({ show, setShow }) => {
       <Sheet.Frame>
         <View className="w-full py-5 px-5">
           <Text className="text-dark font-poppins-medium">
-            Color Palette
+            {i18n.t("color-palette")}
           </Text>
         </View>
         <ScrollView>

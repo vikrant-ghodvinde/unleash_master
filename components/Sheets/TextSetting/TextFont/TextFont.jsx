@@ -2,13 +2,16 @@ import { Dropdown } from "react-native-element-dropdown";
 import { View, Text } from "react-native";
 import fonts from "../../../../lib/json/fontFamily.json";
 import { getContext } from "../../../../lib/context/context";
+import i18n from "../../../../lib/translate/i18n";
 
 const TextFont = () => {
   const { font, setFont } = getContext();
 
   return (
     <View>
-      <Text className="mb-1 text-xs font-poppins-regular">Text Font</Text>
+      <Text className="mb-1 text-xs font-poppins-regular">
+        {i18n.t("text-font")}
+      </Text>
       <Dropdown
         data={fonts}
         labelField="name"

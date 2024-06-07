@@ -3,10 +3,13 @@ import { ScrollView, Sheet } from "tamagui";
 import { Image } from "expo-image";
 import languageCode from "../../../lib/json/languageCode.json";
 import { languageIconsConfiguration } from "../../../lib/helpers/Configurations";
+import { getContext } from "../../../lib/context/context";
+import i18n from "../../../lib/translate/i18n";
 
 const AppLanguage = ({ show, setShow }) => {
+  const { changeLanguage } = getContext();
   const handleChange = (code) => {
-    console.log(code)
+    changeLanguage(code);
     setShow(false);
   };
   return (
@@ -27,7 +30,9 @@ const AppLanguage = ({ show, setShow }) => {
       <Sheet.Handle scale={0.5} scaleY={0.8} />
       <Sheet.Frame>
         <View className="w-full py-5 px-5">
-          <Text className="text-dark font-poppins-medium">App Language</Text>
+          <Text className="text-dark font-poppins-medium">
+            {i18n.t("app-language")}
+          </Text>
         </View>
 
         <ScrollView>
@@ -46,7 +51,7 @@ const AppLanguage = ({ show, setShow }) => {
                   />
                   <View>
                     <Text className="text-xs font-poppins-medium">
-                      {item.name.toLocaleLowerCase()}
+                      {i18n.t(item.name.toLocaleLowerCase())}
                     </Text>
                     <Text className="text-xxs font-poppins-regular">
                       {item.name}

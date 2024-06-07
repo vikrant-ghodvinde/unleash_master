@@ -3,6 +3,7 @@ import { ScrollView, Sheet } from "tamagui";
 import TextSize from "./TextSize/TextSize";
 import TextAlignment from "./TextAlignment/TextAlignment";
 import TextFont from "./TextFont/TextFont";
+import i18n from "../../../lib/translate/i18n";
 
 const TextSetting = ({ show, setShow }) => {
   return (
@@ -25,7 +26,7 @@ const TextSetting = ({ show, setShow }) => {
       <Sheet.Frame>
         <View className="w-full py-5 px-5">
           <Text className="text-dark font-poppins-medium">
-            Text Settings
+            {i18n.t("text-settings")}
           </Text>
         </View>
         <ScrollView>

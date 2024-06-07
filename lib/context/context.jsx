@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import i18n, { setLocale } from "../translate/i18n";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const AppContext = createContext();
 
@@ -29,6 +31,23 @@ export const ContextProvider = ({ children }) => {
     fontFamily: "",
   });
 
+  const [translation, setTranslation] = useState(i18n.locale);
+  useEffect(() => {
+    const loadLocale = async () => {
+      const savedLocale = await AsyncStorage.getItem("appLocale");
+      if (savedLocale) {
+        setTranslation(savedLocale);
+        i18n.locale = savedLocale;
+      }
+    };
+    loadLocale();
+  }, []);
+
+  const changeLanguage = async (newLocale) => {
+    setTranslation(newLocale);
+    await setLocale(newLocale);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -52,6 +71,8 @@ export const ContextProvider = ({ children }) => {
         setTextSettings,
         colorPallet,
         setColorPallet,
+        translation,
+        changeLanguage,
       }}
     >
       {children}

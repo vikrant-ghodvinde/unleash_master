@@ -2,6 +2,7 @@ import { Text } from "react-native";
 import { ToggleGroup, styled } from "tamagui";
 import { getContext } from "../../../../lib/context/context";
 import { DEVICE_WIDTH } from "../../../../styles/constants";
+import i18n from "../../../../lib/translate/i18n";
 
 const SocialMedia = () => {
   const { socialMedia, setSocialMedia } = getContext();
@@ -24,16 +25,16 @@ const SocialMedia = () => {
       style={{ backgroundColor: "#000" }}
     >
       <ToggleGroupItem value="twitter">
-        <Text className="text-xxs font-poppins-regular">Twitter</Text>
+        <Text className="text-xxs font-poppins-regular">{i18n.t("twitter")}</Text>
       </ToggleGroupItem>
       <ToggleGroupItem value="linkedIn">
-        <Text className="text-xxs font-poppins-regular">LinkedIn</Text>
+        <Text className="text-xxs font-poppins-regular">{i18n.t("linkedin")}</Text>
       </ToggleGroupItem>
       <ToggleGroupItem value="instagram">
-        <Text className="text-xxs font-poppins-regular">Instagram</Text>
+        <Text className="text-xxs font-poppins-regular">{i18n.t("instagram")}</Text>
       </ToggleGroupItem>
       <ToggleGroupItem value="facebook">
-        <Text className="text-xxs font-poppins-regular">Facebook</Text>
+        <Text className="text-xxs font-poppins-regular">{i18n.t("facebook")}</Text>
       </ToggleGroupItem>
     </ToggleGroup>
   );

@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import { auth } from "../../lib/auth/config";
+import withTranslation from "../../lib/translate/withTranslation";
 
 const User = () => {
   return (
@@ -9,4 +9,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default withTranslation(User);
