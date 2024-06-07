@@ -4,8 +4,6 @@ import AppLayout from "../../components/AppLayout/AppLayout";
 import AppHeader from "../../components/AppHeader/AppHeader";
 import { GlobeIcon, HelpIcon } from "../../icons";
 import { Image } from "expo-image";
-import { getLocales } from "expo-localization";
-import { i18n } from "../../lib/locales/translator";
 import AppLanguage from "../../components/Sheets/AppLanguage/AppLanguage";
 
 const Settings = () => {
@@ -35,7 +33,7 @@ const Settings = () => {
   return (
     <View className="w-full h-full bg-white">
       <AppLayout scrolled>
-        <AppHeader label={i18n.t("setting-title")} />
+        <AppHeader label="Settings" />
         <View className="relative w-full space-y-5">
           <View className="relative w-full">
             <Text className="text-base font-poppins-medium">General</Text>
